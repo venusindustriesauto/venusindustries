@@ -1,0 +1,497 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-padding-top: 120px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Fix for navbar covering sections */
+#about::before,
+#products::before,
+#contact::before,
+#brochures::before {
+    content: "";
+    display: block;
+    height: 120px;
+    margin-top: -120px;
+    visibility: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.custom-navbar {
+    background: linear-gradient(135deg, #007bff 0%, #dc3545 50%, #007bff 100%) !important;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-bottom: 3px solid #dc3545;
+}
+
+.navbar-brand h2 {
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 25px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff !important;
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.navbar-nav .nav-link.active {
+    color: #dc3545 !important;
+    background: white;
+    font-weight: 600;
+}
+
+.navbar-toggler {
+    border: 2px solid white;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.5);
+}
+
+/* Hero Section */
+.hero {
+    height: auto;
+    min-height: auto;
+    padding-top: 80px; /* Account for fixed navbar */
+    background: white;
+}
+
+.hero-text-overlay {
+    z-index: 3;
+}
+
+.hero-text-overlay .hero-content {
+    max-width: 800px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+/* Ensure columns take auto height */
+.hero .row {
+    min-height: auto;
+}
+
+.hero .col-lg-6 {
+    min-height: auto;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: auto;
+        padding-top: 70px; /* Smaller padding for mobile */
+        padding-bottom: 2rem;
+    }
+    
+    .hero .col-lg-6 {
+        min-height: auto;
+    }
+    
+    .hero-image-side {
+        min-height: auto;
+    }
+    
+    .hero-image-side img {
+        height: auto;
+    }
+    
+    .hero-content {
+        padding: 2rem 1rem !important;
+    }
+    
+    .hero-features {
+        margin-bottom: 2rem;
+    }
+    
+    .hero-features .feature {
+        flex: 1 1 calc(50% - 0.75rem);
+        min-width: 120px;
+    }
+}
+
+.hero-image-side {
+    z-index: 1;
+    min-height: 600px;
+    height: 100vh;
+}
+
+.hero-image-side img {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-overlay {
+    z-index: 2;
+}
+
+.hero-content {
+    z-index: 3;
+    animation: fadeInRight 1.2s ease-out;
+}
+
+.hero-subtitle {
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-features {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-features .feature {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-features .feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Carousel Section */
+.carousel-section {
+    background: #f8f9fa;
+    padding-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .carousel-section {
+        padding-top: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    border-radius: 2px;
+}
+
+.carousel-image {
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    border-radius: 0;
+}
+
+.carousel-caption h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.carousel-caption p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* About Section */
+.about {
+    background: white;
+}
+
+.about .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.stat-box {
+    padding: 1rem;
+}
+
+.text-primary {
+    color: #1e3c72 !important;
+}
+
+/* Products Section */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.product-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.card-title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+
+.card-text {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Brands Section */
+.brands {
+    background: white;
+}
+
+.brand-logo {
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+}
+
+.brand-img {
+    max-height: 100px;
+    max-width: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.brand-logo:hover .brand-img {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+}
+
+.contact .section-title::after {
+    background: #ffd700;
+}
+
+.contact-form .form-control {
+    background: rgba(255,255,255,0.9);
+    border: none;
+    transition: background 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    background: white;
+    box-shadow: none;
+    border-color: #ffd700;
+}
+
+.btn-warning {
+    background-color: #ffd700;
+    border-color: #ffd700;
+    color: #333;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #ffed4e;
+    border-color: #ffed4e;
+    color: #333;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #ffd700;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ffd700;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #333;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #ffd700;
+    color: #333;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+    color: #ccc;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-features {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .carousel-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .carousel-image {
+        height: 250px;
+    }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+} 
